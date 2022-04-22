@@ -8,9 +8,11 @@
         <version>2.3.3.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>com.example</groupId>
     <artifactId>demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <name>demo</name>
     <description>Demo project for Spring Boot</description>
     <modules>
@@ -30,83 +32,51 @@
         <fastjson.version>1.2.70</fastjson.version>
         <poi.version>3.17</poi.version>
     </properties>
-<!--    &lt;!&ndash; 子模块 &ndash;&gt;-->
-<!--    <modules>-->
-<!--        <module>javaweb-eureka</module>-->
-<!--        <module>javaweb-common</module>-->
-<!--        <module>javaweb-gateway</module>-->
-<!--        <module>javaweb-auth</module>-->
-<!--        <module>javaweb-api</module>-->
-<!--        <module>javaweb-service</module>-->
-<!--        <module>javaweb-config</module>-->
-<!--        <module>javaweb-configclient</module>-->
-<!--    </modules>-->
-    <dependencies>
-<!--        &lt;!&ndash; 核心模块依赖 &ndash;&gt;-->
-        <!--        <dependency>-->
-        <!--            <groupId>com.javaweb</groupId>-->
-        <!--            <artifactId>javaweb-common-framework</artifactId>-->
-        <!--            <version>${javaweb.version}</version>-->
-        <!--        </dependency>-->
-        <!--        &lt;!&ndash; 安全认证模块依赖 &ndash;&gt;-->
-        <!--        <dependency>-->
-        <!--            <groupId>com.javaweb</groupId>-->
-        <!--            <artifactId>javaweb-common-security</artifactId>-->
-        <!--            <version>${javaweb.version}</version>-->
-        <!--        </dependency>-->
-        <!--        &lt;!&ndash; Redis缓存服务模块依赖 &ndash;&gt;-->
-        <!--        <dependency>-->
-        <!--            <groupId>com.javaweb</groupId>-->
-        <!--            <artifactId>javaweb-common-redis</artifactId>-->
-        <!--            <version>${javaweb.version}</version>-->
-        <!--        </dependency>-->
-        <!--        &lt;!&ndash; 系统API接口模块依赖 &ndash;&gt;-->
-        <!--        <dependency>-->
-        <!--            <groupId>com.javaweb</groupId>-->
-        <!--            <artifactId>javaweb-api-system</artifactId>-->
-        <!--            <version>${javaweb.version}</version>-->
-        <!--        </dependency>-->
 
-        <!-- SpringCloud 微服务 -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-dependencies</artifactId>
-            <version>${spring-cloud.version}</version>
-            <type>pom</type>
-            <scope>import</scope>
-        </dependency>
+    <!-- 依赖声明 -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- SpringCloud 微服务 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
 
-        <!-- Excel工具 -->
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-ooxml</artifactId>
-            <version>${poi.version}</version>
-        </dependency>
-        <!-- JSON 解析器和生成器 -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>${fastjson.version}</version>
-        </dependency>
-        <!-- IO常用工具类 -->
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>${commons.io.version}</version>
-        </dependency>
-        <!-- Swagger 依赖配置 -->
-        <dependency>
-            <groupId>io.swagger</groupId>
-            <artifactId>swagger-annotations</artifactId>
-            <version>${swagger.core.version}</version>
-        </dependency>
-        <!-- 文件上传工具类 -->
-        <dependency>
-            <groupId>commons-fileupload</groupId>
-            <artifactId>commons-fileupload</artifactId>
-            <version>${commons.fileupload.version}</version>
-        </dependency>
-    </dependencies>
+            <!-- Excel工具 -->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <!-- JSON 解析器和生成器 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <!-- IO常用工具类 -->
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons.io.version}</version>
+            </dependency>
+            <!-- Swagger 依赖配置 -->
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger.core.version}</version>
+            </dependency>
+            <!-- 文件上传工具类 -->
+            <dependency>
+                <groupId>commons-fileupload</groupId>
+                <artifactId>commons-fileupload</artifactId>
+                <version>${commons.fileupload.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>
