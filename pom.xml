@@ -17,6 +17,7 @@
     <description>Demo project for Spring Boot</description>
     <modules>
         <module>Eureka</module>
+        <module>User</module>
     </modules>
     <properties>
         <javaweb.version>1.0.0</javaweb.version>
